@@ -2,13 +2,13 @@ class Participant {
     protected String name;
     protected int maxRunDistance;
     protected int maxJumpHeight;
-    protected boolean active; // Добавлен флаг для отслеживания активности участника
+    protected boolean active;
 
     public Participant(String name, int maxRunDistance, int maxJumpHeight) {
         this.name = name;
         this.maxRunDistance = maxRunDistance;
         this.maxJumpHeight = maxJumpHeight;
-        this.active = true; // Изначально участник активен
+        this.active = true;
     }
 
     public void run(int distance) {
@@ -17,7 +17,7 @@ class Participant {
                 System.out.println(name + " успешно пробежал " + distance + " метров");
             } else {
                 System.out.println(name + " не смог пробежать " + distance + " метров и выбывает");
-                active = false; // Если не смог пробежать, делаем участника неактивным
+                active = false;
             }
         } else {
             System.out.println(name + " уже выбыл");
@@ -30,7 +30,7 @@ class Participant {
                 System.out.println(name + " успешно прыгнул на высоту " + height + " метра");
             } else {
                 System.out.println(name + " не смог прыгнуть на высоту " + height + " метра и выбывает");
-                active = false; // Если не смог прыгнуть, делаем участника неактивным
+                active = false;
             }
         } else {
             System.out.println(name + " уже выбыл");
@@ -106,7 +106,7 @@ public class Main {
                         ((Wall) obstacle).pass(participant);
                     }
                 } else {
-                    break; // Если участник уже неактивен, прерываем прохождение препятствий
+                    break;
                 }
             }
             System.out.println();
